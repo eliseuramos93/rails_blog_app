@@ -1,0 +1,16 @@
+<!-- 9 Refactoring -->
+<!-- 9.1 Rendering partial collections -->
+
+<p>
+  <strong>Commenter: </strong>
+  <%= comment.commenter %> <br>
+  <em> <%= comment.created_at %></em>
+</p>
+<p>
+  <strong>Comment #<%= comment.id %>: </strong>
+  <%= comment.body %>
+</p>
+
+<!-- As the render method iterates over the @article.comments collection, it
+assigns each comment to a local variable named the same as the partial (in this
+case, comment), which is then available in the partial for us to show.-->

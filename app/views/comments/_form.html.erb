@@ -1,0 +1,20 @@
+<!-- 9 Refactoring -->
+<!-- 9.2 Rendering a partial form -->
+
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %> <br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<!--
+This render just defines the partial template we want to render, comments/form. 
+-->

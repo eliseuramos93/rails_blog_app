@@ -1,0 +1,24 @@
+<h1 id='top'><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<ul>
+  <li>
+    <%= link_to 'Edit this post', edit_article_path(@article) %>
+  </li>
+  <li>
+    <%= link_to 'Delete this post', article_path(@article), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+  } %>
+  </li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Àdd a comment</h2>
+<%= render 'comments/form' %>
+
+<a href="#top">Return to top</a> <br>
+<%= link_to 'Back to homepage', root_path %>
